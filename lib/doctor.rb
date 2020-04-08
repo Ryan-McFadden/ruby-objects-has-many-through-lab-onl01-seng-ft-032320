@@ -8,7 +8,19 @@ class Doctor
   end
   
   def new_appointment(patient, date)
-    new_app = Appointment.new(date, patient, self)
+    Appointment.new(date, patient, self)
+  end
+  
+  def appointments
+    Appointment.all.select do |appointment|
+      appointment.doctor == self 
+    end
+  end
+  
+  def patients
+    appointments.collect do |appointment|
+      appointment.patient
+    end
   end
   
   def self.all 
