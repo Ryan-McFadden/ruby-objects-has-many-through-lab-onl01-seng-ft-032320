@@ -8,9 +8,8 @@ class Artist
     @@all << self
   end
   
-  def new_song(name, genre)
-    song = Song.new(name, genre)
-    song.artist = self
+  def new_song(name, ,artist, genre)
+    Song.new(name, self, genre)
   end
   
   def songs 
