@@ -1,0 +1,7 @@
+class Patient
+  
+  @@all = []
+  
+  
+  
+end
